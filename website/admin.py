@@ -2,9 +2,11 @@ from django.contrib import admin
 
 from .models import Content
 from .models import Product
+from django_summernote.admin import SummernoteModelAdmin
 
-class ContentAdmin(admin.ModelAdmin):
+class ContentAdmin(SummernoteModelAdmin):
     list_display = ('title', 'excerpt', 'mod_date')
+    summernote_fields = '__all__'
 
 admin.site.register(Content, ContentAdmin)
 

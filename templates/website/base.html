@@ -1,0 +1,45 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>ESD::Homepage</title>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- CSS Library -->
+    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+    <!-- Custom styles for this template -->
+    <link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
+</head>
+<body>
+    <div id="wrapper">
+        <!-- Header starts -->
+        <div id="header">
+            <p>Header</p>
+        </div>
+
+        <!-- Container starts -->
+        <div id="container">
+            <!-- Home page slider -->
+            <div id="slider">
+                <p>Slider</p>
+            </div>
+
+            <!-- Featured product -->
+            <div id="featured-product">
+                <p>Featured product</p>
+                {% block index_page %}{% endblock %}
+            </div>
+        </div>
+
+        <!-- Footer starts -->
+        <div id="footer">
+            <p>footer</p>
+        </div>
+
+    </div>
+<script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+<script src="{% static 'js/common.js' %}"></script>
+</body>
+</html>

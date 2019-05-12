@@ -1,0 +1,14 @@
+{% extends "website/base.html" %}
+
+{% block index_page %}
+
+{% if content %}
+    {% for page in content %}
+        <p>{{ page.title }}</p>
+        <p>{{ page.body }}</p>
+    {% endfor %}
+{% else %}
+    <p>No content</p>
+{% endif %}
+
+{% endblock %}

@@ -1,0 +1,16 @@
+{% block whoWeAre_page %}
+
+<div id="who-we-are">
+{% if content %}
+    <div class="title">
+        <h2>{{ content.title|safe }}</h2>
+    </div>
+    <div class="container">
+        {{ content.body|safe }}
+    </div>
+{% else %}
+    <p>No content</p>
+{% endif %}
+</div>
+
+{% endblock %}

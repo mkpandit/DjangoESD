@@ -6,7 +6,7 @@ from django_summernote.admin import SummernoteModelAdmin
 
 class ContentAdmin(SummernoteModelAdmin):
     list_display = ('title', 'excerpt', 'mod_date')
-    summernote_fields = '__all__'
+    summernote_fields = ('body')
 
 admin.site.register(Content, ContentAdmin)
 

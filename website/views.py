@@ -14,6 +14,16 @@ def index(request):
         template.render(context, request)
     )
 
+def whoWeAre(request):
+    content = Content.objects.get(pages='team')
+    template = loader.get_template('website/who-we-are.html')
+    context = {
+        'content': content
+    }
+    return HttpResponse(
+        template.render(context, request)
+    )
+
 def product(request):
     products = Product.objects.all()
     template = loader.get_template('website/product.html')

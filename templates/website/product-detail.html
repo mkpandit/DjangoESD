@@ -1,0 +1,8 @@
+{% load staticfiles %}
+
+{% if product %}
+    <p>{{ product.name }}</p>
+    <p><img width="300" src="/media/{{ product.image }}" /></p>
+{% else %}
+    <p>No content</p>
+{% endif %}

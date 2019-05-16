@@ -1,10 +1,9 @@
 {% load staticfiles %}
-<link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
 
 {% if products %}
     {% for product in products %}
         <p>{{ product.name }}</p>
-        <p>{{ product.image }}</p>
+        <p><img width="200" src="/media/{{ product.image }}" /></p>
     {% endfor %}
 {% else %}
     <p>No content</p>

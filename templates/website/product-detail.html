@@ -1,8 +1,15 @@
-{% load staticfiles %}
+{% extends "website/base.html" %}
+
+{% block product %}
 
 {% if product %}
-    <p>{{ product.name }}</p>
+    <h1>{{ product.name }}</h1>
     <p><img width="300" src="/media/{{ product.image }}" /></p>
+    <div class="story">
+        {{ product.description|safe }}
+    </div>
 {% else %}
     <p>No content</p>
 {% endif %}
+
+{% endblock %}

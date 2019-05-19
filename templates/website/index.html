@@ -1,12 +1,27 @@
 {% extends "website/base.html" %}
 
-{% block index_page %}
+{% block featued_product %}
 
 {% if content %}
-    {% for page in content %}
-        <p>{{ page.title }}</p>
-        <p>{{ page.body }}</p>
-    {% endfor %}
+    <h1>Featured product</h1>
+    <div id="product">
+        
+        <div class="featured">
+            <div>
+                {% for product in content %}
+                    <div>
+                        <div class="image"><img src="/media/{{ product.image }}" width="150" /></div>
+                        <div class="text">
+                            <h3 class="product-title">{{ product.name|safe }}</h3>
+                            {{ product.description|safe|truncatechars:200 }}
+                            <a href="product/{{ product.slug }}">more</a>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="slider-nav"><span class="previous">&laquo;</span><span class="next">&raquo;</span></div>
+    </div>
 {% else %}
     <p>No content</p>
 {% endif %}

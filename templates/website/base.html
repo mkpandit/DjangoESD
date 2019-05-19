@@ -7,8 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <!-- CSS Library -->
-    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
     <!-- Custom styles for this template -->
     <link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
 </head>
@@ -16,30 +14,65 @@
     <div id="wrapper">
         <!-- Header starts -->
         <div id="header">
-            <p>Header</p>
+            <div class="menu">
+                MENU
+                <img src="{% static 'images/menu.png' %}" width="50" />
+                <ul class="dropdown-menu">
+                    <li><a href="/who-we-are/">Who We Are?</a></li>
+                    <li><a href="/esd-philosophy/">ESD's Philosophy</a></li>
+                    <li><a href="/product">Product</a></li>
+                </ul>
+            </div>
+            <div class="logo">
+                <a href="/"><img src="{% static 'images/logo.png' %}" /></a>
+            </div>
+            <div class="icon"><p>Social Icons</p></div>
         </div>
 
         <!-- Container starts -->
         <div id="container">
             <!-- Home page slider -->
             <div id="slider">
-                <p>Slider</p>
             </div>
 
             <!-- Featured product -->
-            <div id="featured-product">
-                <p>Featured product</p>
-                {% block index_page %}{% endblock %}
+            <div id="content">
+                {% block featued_product %}{% endblock %}
+                {% block content %}{% endblock %}
+                {% block product %}{% endblock %}
+                {% block products %}{% endblock %}
             </div>
         </div>
 
         <!-- Footer starts -->
         <div id="footer">
-            <p>footer</p>
+            <div id="social">
+                <div class="social-left">
+                    <img src="{% static 'images/facebook.png' %}" width="30" />
+                    <img src="{% static 'images/twitter.png' %}" width="30" />
+                </div>
+                <div class="social-right"><a href="#">Email singup</a></div>
+            </div>
+            <div id="footer-menu">
+                <div class="footer-menu-left">
+                    <img src="{% static 'images/email.jpg' %}" width="30">
+                </div>
+                <div class="footer-menu-right">
+                    <a href="/privacy-policy/">Privacy Statements</a> |
+                    <a href="/terms-condition/">Terms and Conditions</a> | 
+                    <a href="/trademarks/">Trademarks</a> | 
+                    <a href="/esd-career/">Career</a>
+                </div>
+            </div>
+            <div id="footer-address">
+                <p>Dhaka, Bangladesh | Toronto, Canada</p>
+                <p>&copy; EnvSense Devices Ltd.</p>
+            </div>
         </div>
 
     </div>
 <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+<script src="{% static 'js/jquery.diyslider.min.js' %}"></script>
 <script src="{% static 'js/common.js' %}"></script>
 </body>
 </html>

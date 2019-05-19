@@ -7,7 +7,7 @@ from .models import Content
 from .models import Product
 
 def index(request):
-    content = Content.objects.all()
+    content = Product.objects.filter(is_featured=True)
     template = loader.get_template('website/index.html')
     context = {
         'content': content

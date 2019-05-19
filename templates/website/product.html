@@ -1,10 +1,18 @@
-{% load staticfiles %}
+{% extends "website/base.html" %}
+
+{% block products %}
 
 {% if products %}
+    <h1>Products from ESD</h1>
+    <div class="story">
     {% for product in products %}
-        <p>{{ product.name }}</p>
+        <h3>{{ product.name }}</h3>
         <p><img width="200" src="/media/{{ product.image }}" /></p>
+        <p><a href="/product/{{ product.slug }}">Details</a></p>
     {% endfor %}
+    </div>
 {% else %}
     <p>No content</p>
 {% endif %}
+
+{% endblock %}

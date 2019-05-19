@@ -4,9 +4,16 @@
 
 {% if product %}
     <h1>{{ product.name }}</h1>
-    <p><img width="300" src="/media/{{ product.image }}" /></p>
     <div class="story">
-        {{ product.description|safe }}
+        <div class="row one-row">
+            <div class="left">
+                {{ product.description|safe }}
+            </div>
+            <div class="right right-center">
+                <img width="300" src="/media/{{ product.image }}" title="{{ product.name|safe }}" alt="{{ product.name|safe }}" />
+                <p>Fig - {{ product.name|safe }}</p>
+            </div>
+        </div>
     </div>
 {% else %}
     <p>No content</p>

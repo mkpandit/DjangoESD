@@ -6,9 +6,18 @@
     <h1>Products from ESD</h1>
     <div class="story">
     {% for product in products %}
-        <h3>{{ product.name }}</h3>
-        <p><img width="200" src="/media/{{ product.image }}" /></p>
-        <p><a href="/product/{{ product.slug }}">Details</a></p>
+        <div class="row">
+            <div class="left">
+                <h3>{{ product.name }}</h3>
+                <p>Price: {{ product.price|safe}}</p>
+                <p>Category: {{ product.category|safe }}</p>
+                <p>{{ product.description|safe|truncatechars:200 }}</p>
+                <p><a href="/product/{{ product.slug }}">&raquo; Click for complete information</a></p>
+            </div>
+            <div class="right">
+                <img width="200" src="/media/{{ product.image }}" />
+            </div>
+        </div>
     {% endfor %}
     </div>
 {% else %}

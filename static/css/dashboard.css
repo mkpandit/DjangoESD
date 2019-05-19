@@ -11,9 +11,14 @@ a {
   text-decoration: none;
 }
 
+p.title {
+  font-weight: bold;
+}
+
 body {
-  font-size: 16px;
+  font-size: 14px;
   font-family: 'Consolas', 'ITC Berkeley Oldstyle Std', 'Trebuchet MS', sans-serif;
+  line-height: 1.75;
   margin: 0 1% 0 1%;
   padding: 0;
 }
@@ -110,6 +115,45 @@ div#content {
   width: 100%;
 }
 
+div#content div.story,
+div#content div.row {
+  width: 100%;
+  float: left;
+}
+
+div#content div.row {
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #d0d0d0;
+}
+
+div#content div.row-last,
+div#content div.one-row {
+  border-bottom: 0px solid #d0d0d0;
+}
+
+div#content div.story div.one-row div.right img {
+  width: 60%;
+}
+
+div#content div.row img {
+  width: 200px;
+}
+
+div#content div.story div.row div.left,
+div#content div.story div.row div.right {
+  width: 50%;
+  float: left;
+}
+
+div#content div.story div.row div.right {
+  text-align: right;
+}
+
+div#content div.story div.row div.right-center {
+  text-align: center;
+}
+
 div#product {
   margin: 0;
   padding: 0;
@@ -177,7 +221,7 @@ div#social div.social-right {
 }
 
 div#footer-menu {
-  border-top: 1px solid #ddd;
+  border-top: 1px solid #d0d0d0;
 }
 
 div#footer-menu div.footer-menu-left,
@@ -195,7 +239,7 @@ div#footer-menu div.footer-menu-right {
 }
 
 div#footer-address {
-  border-top: 1px solid #ddd;
+  border-top: 1px solid #d0d0d0;
   text-align: center;
 }
 

@@ -17,7 +17,7 @@ p.title {
 
 body {
   font-size: 14px;
-  font-family: 'Consolas', 'ITC Berkeley Oldstyle Std', 'Trebuchet MS', sans-serif;
+  font-family: 'ITC Berkeley Oldstyle Std', 'Consolas', 'Trebuchet MS', sans-serif;
   line-height: 1.75;
   margin: 0 1% 0 1%;
   padding: 0;
@@ -38,12 +38,16 @@ div#header {
 
 div#header div.menu,
 div#header div.icon {
-  width: 5%;
+  width: 10%;
   float: left;
-  font-family: 'Eurostile-Roman Medium', sans-serif;
   text-align: center;
-  font-size: 18px;
   padding-top: 4%;
+}
+
+div#header div.menu a p {
+  margin: 0;
+  color: #fff;
+  font-family: 'Eurostile-Roman Medium', sans-serif;
 }
 
 div#header div.menu img {
@@ -79,7 +83,7 @@ ul.dropdown-menu{
 }
 
 div#header div.logo {
-  width: 89%;
+  width: 79%;
   float: left;
   text-align: center;
 }
@@ -103,10 +107,64 @@ div#slider {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
-  height: 350px;
   float: left;
   width: 100%;
+  height: 220px;
+  text-align: center;
+  /*display: flex;
+  justify-content: center;
+  align-items: center;*/
 }
+
+div#slider div.clide {
+  width: 0px;
+  height: 0px;
+  border: 0px solid #3399ff;
+  margin: 10px auto 10px auto;
+  display: none;
+  border-radius: 50%;
+  font-family: 'Eurostile-Roman Medium', sans-serif;
+  font-size: 18px;
+  color: #fff;
+}
+
+div#slider div.slide-1 {
+  background-image: url('../images/div-1.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+div#slider div.slide-2 {
+  background-image: url('../images/div-2.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+div#slider div.slide-3 {
+  background-image: url('../images/div-3.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+div#slider div.slide-4 {
+  background-image: url('../images/div-4.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+div#slider div.slide-5 {
+  width: 100%;
+  text-align: center;
+  font-family: 'Eurostile-Roman Medium', sans-serif;
+  font-size: 14px;
+  color: #fff;
+  display: none;
+}
+
 
 div#content {
   margin: 0;
@@ -245,4 +303,15 @@ div#footer-address {
 
 div#footer a {
   color: #fff;
+}
+
+/*
+* Font Awesome hacks
+*/
+.fas {
+  color: #fff;
+}
+
+.fass {
+  color: #000;
 }

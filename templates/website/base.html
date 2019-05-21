@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
+    <!-- Font awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
     <!-- Custom styles for this template -->
     <link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
 </head>
@@ -15,25 +17,35 @@
         <!-- Header starts -->
         <div id="header">
             <div class="menu">
-                MENU
-                <a href="#" class="menu-click"><img src="{% static 'images/menu.png' %}" width="50" />
+                <a href="#" class="menu-click">
+                    <p>MENU</p>
+                    <i class="fas fa-bars"></i>
+                    <!--<img src="{% static 'images/menu.png' %}" width="50" /> -->
                     <ul class="dropdown-menu">
                         <li><a href="/who-we-are/">Who We Are?</a></li>
                         <li><a href="/esd-philosophy/">ESD's Philosophy</a></li>
-                        <li><a href="/product">Product</a></li>
+                        <li><a href="/product/">Product</a></li>
                     </ul>
                 </a>
             </div>
             <div class="logo">
                 <a href="/"><img src="{% static 'images/logo.png' %}" /></a>
             </div>
-            <div class="icon"><p>Social Icons</p></div>
+            <div class="icon"><p>
+                <i class="fas fa-search-minus fa-2x"></i>
+                <i class="fas fa-cart-plus fa-2x"></i>
+            </p></div>
         </div>
 
         <!-- Container starts -->
         <div id="container">
             <!-- Home page slider -->
             <div id="slider">
+                <div class="clide slide-1"><p>&nbsp;</p>High Quality</div>
+                <div class="clide slide-2"><p>&nbsp;</p>Low Price</div>
+                <div class="clide slide-3"><p>&nbsp;</p>Ergonomic Design</div>
+                <div class="clide slide-4"><p>&nbsp;</p>ESD</div>
+                <div class="slide-5">Making Science Accessible</div>
             </div>
 
             <!-- Featured product -->
@@ -49,24 +61,30 @@
         <div id="footer">
             <div id="social">
                 <div class="social-left">
-                    <img src="{% static 'images/facebook.png' %}" width="30" />
-                    <img src="{% static 'images/twitter.png' %}" width="30" />
+                    <a href="mailto:info.esdbc@gmail.com"><i class="fas fa-info-circle"></i> Inquiry</a> |
+                    <a href="mailto:cs.esdbc@gmail.com">Cutomer support</a> |
+                    <a href="mailto:career.esdbc@gmail.com">Career</a>
                 </div>
-                <div class="social-right"><a href="#">Email singup</a></div>
+                <div class="social-right">
+                    <i class="fab fa-facebook-square fa-2x"></i>
+                    <i class="fab fa-twitter-square fa-2x"></i>
+                    <i class="fab fa-linkedin fa-2x"></i>
+                </div>
             </div>
             <div id="footer-menu">
                 <div class="footer-menu-left">
-                    <img src="{% static 'images/email.jpg' %}" width="30">
+                    <a href="mailto:nl.esdbc@gmail.com"><i class="far fa-envelope"></i> Newsletter singup</a>
                 </div>
                 <div class="footer-menu-right">
                     <a href="/privacy-policy/">Privacy Statements</a> |
                     <a href="/terms-condition/">Terms and Conditions</a> | 
-                    <a href="/trademarks/">Trademarks</a> | 
+                    <a href="/copyrights-trademarks-patents/">Trademarks</a> | 
                     <a href="/esd-career/">Career</a>
                 </div>
             </div>
             <div id="footer-address">
-                <p>Dhaka, Bangladesh | Toronto, Canada</p>
+                <p>Khilkhet Road 12, Dhaka, Bangladesh <i class="fas fa-phone-square"></i> +8801723620138 (GMT 4:00 AM – 1:00 PM)</p>
+                <p>Charles Street West, Toronto, M4Y 1R5, ON, Canada <i class="fas fa-phone-square"></i> +1-647-608-0367 (GMT 3:00 PM – 2:00 AM)</p>
                 <p>&copy; EnvSense Devices Ltd.</p>
             </div>
         </div>

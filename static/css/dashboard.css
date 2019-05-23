@@ -9,6 +9,7 @@ h1, h2, h3, h4 {
 
 a {
   text-decoration: none;
+  font-family: 'Eurostile-Roman Medium';
 }
 
 p.title {
@@ -16,9 +17,9 @@ p.title {
 }
 
 body {
-  font-size: 14px;
+  font-size: 16px;
   font-family: 'ITC Berkeley Oldstyle Std', 'Consolas', 'Trebuchet MS', sans-serif;
-  line-height: 1.75;
+  line-height: 2;
   margin: 0 1% 0 1%;
   padding: 0;
 }
@@ -48,6 +49,7 @@ div#header div.menu a p {
   margin: 0;
   color: #fff;
   font-family: 'Eurostile-Roman Medium', sans-serif;
+  font-size: 20px;
 }
 
 div#header div.menu img {
@@ -58,8 +60,9 @@ div#header div.menu img {
 ul.dropdown-menu {
   position: absolute;
   min-width: 120px;
-  padding: 0;
+  padding: 5px;
   margin: 0;
+  background-color: #000;
 }
 
 ul.dropdown-menu li {
@@ -109,7 +112,7 @@ div#slider {
   background-position: center center;
   float: left;
   width: 100%;
-  height: 220px;
+  height: 270px;
   text-align: center;
   /*display: flex;
   justify-content: center;
@@ -129,40 +132,36 @@ div#slider div.clide {
 }
 
 div#slider div.slide-1 {
-  background-image: url('../images/div-1.jpg');
+  background-image: url('../images/div-1.png');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
 }
 
 div#slider div.slide-2 {
-  background-image: url('../images/div-2.jpg');
+  background-image: url('../images/div-2.png');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
 }
 
 div#slider div.slide-3 {
-  background-image: url('../images/div-3.jpg');
+  background-image: url('../images/div-3.png');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
 }
 
 div#slider div.slide-4 {
-  background-image: url('../images/div-4.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
-}
-
-div#slider div.slide-5 {
   width: 100%;
   text-align: center;
   font-family: 'Eurostile-Roman Medium', sans-serif;
-  font-size: 14px;
+  font-size: 0px;
   color: #fff;
   display: none;
+}
+#slide-3-text {
+  font-size: 0px;
 }
 
 

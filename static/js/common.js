@@ -2,84 +2,60 @@ $(document).ready(function() {
     if (window.location.pathname === '/' || window.location.pathname === '/index.html') {
         var featuredWidth = parseInt($(".featured").width()) + "px";
         console.log(featuredWidth);
-        $(".featured").diyslider();
-        $(".featured").diyslider("updateOptions", {
+        $(".featured").diyslider({
             width: featuredWidth,
-            height: "200px"
+            height: "250px",
+            animationEasing: "linear",
+            animationDuration: 2000,
+            animationAxis: "x"
         });
+        $(".featured").diyslider("updateOptions", {
+            width: featuredWidth
+        });
+        // set up a timer to change slides automatically
+        $(".featured").diyslider("move", "forth");
+            setInterval(function(){
+                $(".featured").diyslider("move", "forth");
+        }, 5000);
+
         $(".previous").bind("click", function() {
             $(".featured").diyslider("move", "back");
         });
+
         $(".next").bind("click", function() {
             $(".featured").diyslider("move", "forth");
         });
     }
 
+    var animationDelay = 500
+    var fadeOutDelay = 1000
     $(".slide-1").css({
         "opacity": "0",
         "display": "block"
-    }).show().animate({"opacity": 1, "width": "150px", "height": "150px"}, 3000, "linear", function() {
-        $(this).fadeOut(1000, function() {
+    }).show().animate({"opacity": 1, "width": "150px", "height": "150px"}, animationDelay, "linear", function() {
+        $(this).fadeOut(fadeOutDelay, function() {
             console.log("Slide 1");
             $(".slide-2").css({
                 "opacity": "0",
                 "display": "block"
-            }).show().animate({"opacity": 1, "width": "150px", "height": "150px"}, 3000, "linear", function() {
-                $(this).fadeOut(1000, function() {
+            }).show().animate({"opacity": 1, "width": "150px", "height": "150px"}, animationDelay, "linear", function() {
+                $(this).fadeOut(fadeOutDelay, function() {
                     console.log("Slide 2");
                     $(".slide-3").css({
                         "opacity": "0",
                         "display": "block"
-                    }).show().animate({"opacity": 1, "width": "150px", "height": "150px"}, 3000, "linear", function() {
-                        $(this).fadeOut(1000, function() {
-                            console.log("Slide 3")
-                            $(".slide-4").css({
-                                "opacity": "0",
-                                "display": "block"
-                            }).show().animate({"opacity": 1, "width": "150px", "height": "150px"}, 3000, "linear", function() {
-                                console.log("Slide 4")
-                                $('.slide-5').css({
-                                    "opacity": "0",
-                                    "display": "block",
-                                }).fadeIn().animate({"opacity": 1, 'fontSize': '18px'}, 3000);
-                            })
-                        })
-                    })
-                })
-            })
-        })
-    })
-    /*$('.slide-1').css({
-        "opacity":"0",
-        "display":"block",
-    }).show().animate({opacity: 1, 'width': '150px', 'height': '150px'}, 1000, "linear", function() {
-        console.log("Done with slide 1");
-        $(this).hide('slow')
-        $('.slide-2').css({
-            "opacity": "0",
-            "display": "block",
-        }).show().animate({opacity: 1, 'width': '150px', 'height': '150px'}, 1000, "linear", function() {
-            console.log("Done with slide 2");
-            $(this).hide('slow');
-            $('.slide-3').css({
-                "opacity": "0",
-                "display": "block",
-            }).show().animate({opacity: 1, 'width': '150px', 'height': '150px'}, 1000, "linear", function() {
-                console.log("Done with slide 3");
-                $(this).hide('slow');
-                $('.slide-4').css({
-                    "opacity": "0",
-                    "display": "block",
-                }).show().animate({opacity: 1, 'width': '150px', 'height': '150px'}, 1000, "linear", function() {
-                    console.log("Done with slide 4");
-                    $('.slide-5').css({
-                        "opacity": "0",
-                        "display": "block",
-                    }).fadeIn().animate({opacity: 1, 'fontSize': '18px'}, 2000);
+                    }).show().animate({"opacity": 1, "width": "150px", "height": "150px"}, animationDelay, "linear", function() {
+                        $("#slide-3-text").animate({"opacity": 1, "fontSize": "20px"})
+                        console.log("Slide 3")
+                        $('.slide-4').css({
+                            "opacity": "0",
+                            "display": "block",
+                        }).fadeIn().animate({"opacity": 1, 'fontSize': '20px'}, 1000);
+                    });
                 });
             });
         });
-    });*/
+    });
 });
 
 $(function(){

@@ -1,5 +1,15 @@
 {% extends "website/base.html" %}
 
+{% block slider %}
+<!-- Home page slider  -->
+<div id="slider">
+    <div class="clide slide-1"><p>&nbsp;</p></div>
+    <div class="clide slide-2"><p>&nbsp;</p></div>
+    <div class="clide slide-3"><p>&nbsp;</p><span id="slide-3-text">ESD</span></div>
+    <div class="slide-4">Making Science Accessible</div>
+</div>
+{% endblock %}
+
 {% block featued_product %}
 
 {% if content %}
@@ -10,7 +20,11 @@
             <div>
                 {% for product in content %}
                     <div>
-                        <div class="image"><img src="/media/{{ product.image }}" width="150" /></div>
+                        <div class="image">
+                            <a href="product/{{ product.slug }}">
+                                <img title="{{ product.name|safe }}" alt="{{ product.name|safe }}" src="/media/{{ product.image }}" width="220" />
+                            </a>
+                        </div>
                         <div class="text">
                             <h3 class="product-title">{{ product.name|safe }}</h3>
                             {{ product.description|safe|truncatechars:200 }}

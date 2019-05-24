@@ -1,0 +1,25 @@
+{% extends "website/base.html" %}
+
+{% block category %}
+
+{% if category %}
+    <h1>{{ category.name }}</h1>
+    <div class="story">
+        <div class="row one-row">
+            <div class="left">
+                {% for product in category.get_products %}
+                    <p>{{ product.name }}</p>
+                    <p>{{ product.slug }}</p>
+                {% endfor%}
+                {{ category.slug|safe }}
+            </div>
+            <div class="right right-center">
+                
+            </div>
+        </div>
+    </div>
+{% else %}
+    <p>No content</p>
+{% endif %}
+
+{% endblock %}

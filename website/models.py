@@ -20,6 +20,10 @@ class Category(models.Model):
         return "%s" % (self.name)
     def __unicode__(self):
         return  u'%s' % (self.name)
+    
+    @property
+    def get_products(self):
+        return Product.objects.filter(category__name=self.name)
 
 class Product(models.Model):
     STATUS = (

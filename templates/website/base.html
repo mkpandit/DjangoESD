@@ -46,6 +46,8 @@
                 {% block content %}{% endblock %}
                 {% block product %}{% endblock %}
                 {% block products %}{% endblock %}
+                {% block categories %}{% endblock %}
+                {% block category %}{% endblock %}
             </div>
         </div>
 
@@ -80,7 +82,7 @@
             <div id="footer-address">
                 <p>Khilkhet Road 12, Dhaka, Bangladesh</p>
                 <p>Charles Street West, Toronto, M4Y 1R5, ON, Canada</p>
-                <p>&copy; EnvSense Devices Ltd.</p>
+                <p>&copy; {% now 'Y' %} EnvSense Devices Ltd.</p>
             </div>
         </div>
 

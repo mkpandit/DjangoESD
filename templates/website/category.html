@@ -1,0 +1,27 @@
+{% extends "website/base.html" %}
+
+{% block categories %}
+
+{% if categories %}
+    <h1>ESD Product Categories</h1>
+    <div class="story">
+    {% for category in categories %}
+        <div class="row">
+            <div class="left">
+                <h3>{{ category.name }}</h3>
+                {% for product in category.get_products %}
+                    <p>{{ product.name }}</p>
+                    <p>{{ product.slug }}</p>
+                {% endfor %}
+            </div>
+            <div class="right">
+                
+            </div>
+        </div>
+    {% endfor %}
+    </div>
+{% else %}
+    <p>No content</p>
+{% endif %}
+
+{% endblock %}

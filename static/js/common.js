@@ -14,7 +14,7 @@ $(document).ready(function() {
         });
         // set up a timer to change slides automatically
         $(".featured").diyslider("move", "forth");
-            setInterval(function(){
+            setInterval(function() {
                 $(".featured").diyslider("move", "forth");
         }, 5000);
 

@@ -1,12 +1,7 @@
-from .models import Content
+from .models import Category
 
 def PageMeta(request):
-    meta = Content.objects.values_list('slug', 'title')
-    print(meta)
-    url_dic = {
-        'privacypolicy': meta[0][0]
-    }
-    print(url_dic)
+    cat_url = Category.objects.values_list('name', 'slug')
     return {
-        'meta': url_dic,  # Add 'contacts' to the context
+        'cat_url': cat_url,  # Add 'contacts' to the context
     }

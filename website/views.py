@@ -33,7 +33,6 @@ class ProductDetailView(View):
 
 class ProductListView(ListView):
     queryset = Product.objects.filter()
-    # print(queryset)
     template_name = 'website/product.html'
     context_object_name = 'products'
 

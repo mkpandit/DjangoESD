@@ -4,7 +4,7 @@ $(document).ready(function() {
         console.log(featuredWidth);
         $(".featured").diyslider({
             width: featuredWidth,
-            height: "250px",
+            height: "500px",
             animationEasing: "linear",
             animationDuration: 2000,
             animationAxis: "x"
@@ -13,10 +13,10 @@ $(document).ready(function() {
             width: featuredWidth
         });
         // set up a timer to change slides automatically
-        $(".featured").diyslider("move", "forth");
+        /*$(".featured").diyslider("move", "forth");
             setInterval(function() {
                 $(".featured").diyslider("move", "forth");
-        }, 5000);
+        }, 10000);*/
 
         $(".previous").bind("click", function() {
             $(".featured").diyslider("move", "back");
@@ -32,19 +32,19 @@ $(document).ready(function() {
     $(".slide-1").css({
         "opacity": "0",
         "display": "block"
-    }).show().animate({"opacity": 1, "width": "150px", "height": "150px"}, animationDelay, "linear", function() {
+    }).show().animate({"opacity": 1, "width": "200px", "height": "200px"}, animationDelay, "linear", function() {
         $(this).fadeOut(fadeOutDelay, function() {
             console.log("Slide 1");
             $(".slide-2").css({
                 "opacity": "0",
                 "display": "block"
-            }).show().animate({"opacity": 1, "width": "150px", "height": "150px"}, animationDelay, "linear", function() {
+            }).show().animate({"opacity": 1, "width": "200px", "height": "126px"}, animationDelay, "linear", function() {
                 $(this).fadeOut(fadeOutDelay, function() {
                     console.log("Slide 2");
                     $(".slide-3").css({
                         "opacity": "0",
                         "display": "block"
-                    }).show().animate({"opacity": 1, "width": "150px", "height": "150px"}, animationDelay, "linear", function() {
+                    }).show().animate({"opacity": 1, "width": "200px", "height": "189px"}, animationDelay, "linear", function() {
                         $("#slide-3-text").animate({"opacity": 1, "fontSize": "20px"})
                         console.log("Slide 3")
                         $('.slide-4').css({
@@ -58,7 +58,7 @@ $(document).ready(function() {
     });
 });
 
-$(function(){
+$(function() {
     $('div#header > .menu > a.menu-click').on('click',function(event){
         event.preventDefault()
         $(this).parent().find('ul').first().toggle(300);
@@ -70,5 +70,18 @@ $(function(){
                 $('html').unbind('click');
             });
         });
+    });  
+});
+
+$(function() {
+    $('ul.dropdown-submenu').hide();
+    $('li#product-submenu').hover(function () {
+    if ($('> ul.dropdown-submenu',this).length > 0) {
+        $('> ul.dropdown-submenu',this).stop().slideDown('slow');
+    }
+    },function () {
+        if ($('> ul.dropdown-submenu',this).length > 0) {
+            $('> ul.dropdown-submenu',this).stop().slideUp('slow');
+        }
     });  
 });

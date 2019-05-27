@@ -3,6 +3,7 @@
 {% block slider %}
 <!-- Home page slider  -->
 <div id="slider">
+    <div class="clide slide-0"><p>&nbsp;</p></div>
     <div class="clide slide-1"><p>&nbsp;</p></div>
     <div class="clide slide-2"><p>&nbsp;</p></div>
     <div class="clide slide-3"><p>&nbsp;</p><span id="slide-3-text">ESD</span></div>
@@ -22,13 +23,14 @@
                     <div>
                         <div class="image">
                             <a href="product/{{ product.slug }}">
-                                <img title="{{ product.name|safe }}" alt="{{ product.name|safe }}" src="/media/{{ product.image }}" width="220" />
+                                <img title="{{ product.name|safe }}" alt="{{ product.name|safe }}" src="/media/{{ product.image }}" />
                             </a>
                         </div>
                         <div class="text">
-                            <h3 class="product-title">{{ product.name|safe }}</h3>
-                            {{ product.description|safe|truncatechars:200 }}
-                            <a href="product/{{ product.slug }}">more</a>
+                            <a href="product/{{ product.slug }}">
+                                <h3 class="product-title">{{ product.name|safe }}</h3>
+                            </a>
+                            {{ product.features|safe }}
                         </div>
                     </div>
                 {% endfor %}

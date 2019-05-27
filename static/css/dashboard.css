@@ -18,10 +18,19 @@ p.title {
 
 body {
   font-size: 16px;
-  font-family: 'ITC Berkeley Oldstyle Std', 'Consolas', 'Trebuchet MS', sans-serif;
+  font-family: 'Open Sans', 'Consolas', 'Trebuchet MS', sans-serif;
   line-height: 2;
   margin: 0 1% 0 1%;
   padding: 0;
+}
+
+table {
+  width: 80%;
+  border-collapse: collapse;
+}
+
+table, th, td {
+  border: 1px solid #ddd;
 }
 
 div#wrapper {
@@ -85,6 +94,10 @@ ul.dropdown-menu{
   display: none;
 }
 
+ul.dropdown-submenu{
+  display: none;
+}
+
 div#header div.logo {
   width: 79%;
   float: left;
@@ -106,50 +119,47 @@ div#container {
 div#slider {
   margin: 0;
   padding: 0;
-  background-image: url('../images/slider-bg.jpeg');
+  background-image: url('../images/slider-low.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
   float: left;
   width: 100%;
-  height: 270px;
+  height: 380px;
   text-align: center;
-  /*display: flex;
-  justify-content: center;
-  align-items: center;*/
 }
 
 div#slider div.clide {
   width: 0px;
   height: 0px;
-  border: 0px solid #3399ff;
-  margin: 10px auto 10px auto;
+  margin: 1px auto 1px auto;
   display: none;
-  border-radius: 50%;
   font-family: 'Eurostile-Roman Medium', sans-serif;
   font-size: 18px;
   color: #fff;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+div#slider div.slide-0 {
+  background-image: url('../images/div-0.png');
+  display: block;
+  width: 250px;
+  height: 76px;
+  border-radius: 0;
 }
 
 div#slider div.slide-1 {
   background-image: url('../images/div-1.png');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
 }
 
 div#slider div.slide-2 {
   background-image: url('../images/div-2.png');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
 }
 
 div#slider div.slide-3 {
   background-image: url('../images/div-3.png');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
 }
 
 div#slider div.slide-4 {
@@ -189,12 +199,24 @@ div#content div.one-row {
   border-bottom: 0px solid #d0d0d0;
 }
 
-div#content div.story div.one-row div.right img {
-  width: 60%;
+div#content div.story div.row img.product-image {
+  width: 40%;
+  float: right;
+  margin: 0 0 3% 3%;
 }
 
-div#content div.row img {
+div#content div.row img.team {
   width: 200px;
+}
+
+div#content div.row img.img-left {
+  float: left;
+  margin: 30px 30px 0 0px;
+}
+
+div#content div.row img.img-right{
+  float: right;
+  margin: 30px 0px 0 30px;
 }
 
 div#content div.story div.row div.left,
@@ -234,12 +256,17 @@ div#product div.featured {
 
 div#product div.featured div.image {
   float: left;
-  width: 30%;
+  width: 33%;
+}
+
+div#product div.featured div.image img{
+  width: 100%;
 }
 
 div#product div.featured div.text {
   float: left;
-  width: 69%;
+  width: 60%;
+  margin-left: 5%;
 }
 
 div#product div.featured div.text h4.product-title {

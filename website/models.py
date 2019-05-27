@@ -35,6 +35,7 @@ class Product(models.Model):
     is_featured = models.BooleanField(default=True, verbose_name='Featured product?', help_text='Check if featured')
     slug = models.CharField(max_length=256, default='slug')
     description = models.TextField(default='Product description')
+    features = models.TextField(default='Product features')
     image = models.ImageField(upload_to='product/', blank=True)
     price = models.CharField(max_length=16, default='$20')
     status = models.CharField(max_length=16, choices=STATUS, default='Available')

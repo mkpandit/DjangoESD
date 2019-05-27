@@ -1,18 +1,21 @@
 {% extends "website/base.html" %}
 
+{% block title %}
+    {% if product %}
+        ESD Product - {{ product.name|safe }}
+    {% else %}
+        ESD 
+    {% endif %}
+{% endblock%}
+
 {% block product %}
 
 {% if product %}
     <h1>{{ product.name }}</h1>
     <div class="story">
         <div class="row one-row">
-            <div class="left">
-                {{ product.description|safe }}
-            </div>
-            <div class="right right-center">
-                <img width="300" src="/media/{{ product.image }}" title="{{ product.name|safe }}" alt="{{ product.name|safe }}" />
-                <p>Fig - {{ product.name|safe }}</p>
-            </div>
+            <img class="product-image" src="/media/{{ product.image }}" title="{{ product.name|safe }}" alt="{{ product.name|safe }}" />
+            {{ product.description|safe }}
         </div>
     </div>
 {% else %}

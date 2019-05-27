@@ -13,7 +13,7 @@ admin.site.register(Content, ContentAdmin)
 
 class ProductAdmin(SummernoteModelAdmin):
     list_display = ('name', 'category', 'mod_date')
-    summernote_fields = ('description')
+    summernote_fields = ('description', 'features')
 
 admin.site.register(Product, ProductAdmin)
 

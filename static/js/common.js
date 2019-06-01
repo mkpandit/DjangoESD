@@ -1,61 +1,19 @@
 $(document).ready(function() {
     if (window.location.pathname === '/' || window.location.pathname === '/index.html') {
-        var featuredWidth = parseInt($(".featured").width()) + "px";
-        console.log(featuredWidth);
-        $(".featured").diyslider({
-            width: featuredWidth,
-            height: "500px",
-            animationEasing: "linear",
-            animationDuration: 2000,
-            animationAxis: "x"
+        $("#content-slider").lightSlider({
+            item: 1,
+            pauseOnHover: true,
+            pause: 5000,
+            loop:true,
+            keyPress:true,
+            auto:true
         });
-        $(".featured").diyslider("updateOptions", {
-            width: featuredWidth
-        });
-        // set up a timer to change slides automatically
-        /*$(".featured").diyslider("move", "forth");
-            setInterval(function() {
-                $(".featured").diyslider("move", "forth");
-        }, 10000);*/
-
-        $(".previous").bind("click", function() {
-            $(".featured").diyslider("move", "back");
-        });
-
-        $(".next").bind("click", function() {
-            $(".featured").diyslider("move", "forth");
-        });
+        slider();
     }
+});
 
-    var animationDelay = 500
-    var fadeOutDelay = 1000
-    $(".slide-1").css({
-        "opacity": "0",
-        "display": "block"
-    }).show().animate({"opacity": 1, "width": "200px", "height": "200px"}, animationDelay, "linear", function() {
-        $(this).fadeOut(fadeOutDelay, function() {
-            console.log("Slide 1");
-            $(".slide-2").css({
-                "opacity": "0",
-                "display": "block"
-            }).show().animate({"opacity": 1, "width": "200px", "height": "126px"}, animationDelay, "linear", function() {
-                $(this).fadeOut(fadeOutDelay, function() {
-                    console.log("Slide 2");
-                    $(".slide-3").css({
-                        "opacity": "0",
-                        "display": "block"
-                    }).show().animate({"opacity": 1, "width": "200px", "height": "189px"}, animationDelay, "linear", function() {
-                        $("#slide-3-text").animate({"opacity": 1, "fontSize": "20px"})
-                        console.log("Slide 3")
-                        $('.slide-4').css({
-                            "opacity": "0",
-                            "display": "block",
-                        }).fadeIn().animate({"opacity": 1, 'fontSize': '20px'}, 1000);
-                    });
-                });
-            });
-        });
-    });
+$(window).resize(function () {
+    slider()
 });
 
 $(function() {
@@ -85,3 +43,49 @@ $(function() {
         }
     });  
 });
+
+function slider() {
+    console.log(window.width)
+    var sliderContainerWidth = parseInt($('#slider').width())
+    console.log(sliderContainerWidth)
+    var leftPosition = parseInt( ( ( sliderContainerWidth  - 200 ) / 2 ) + ( sliderContainerWidth / 20 ) ) + 20
+    $('.slide-1').show()
+        .animate({
+            "opacity": 1,
+            "width": "200px",
+            "height": "200px", 
+            "left": leftPosition+"px"}, 1500, "swing"
+        ).fadeOut().animate({
+            "opacity": 0,
+            "width": "0px",
+            "height": "0px"}, 500, "swing"
+        )
+        $('.slide-2').delay(1000).show()
+            .animate({
+                "opacity": 1,
+                "width": "200px",
+                "height": "126px",
+                "left": leftPosition+"px"}, 1500, "swing"
+            ).fadeOut().animate({
+                "opacity": 0,
+                "width": "0px",
+                "height": "0px"}, 500, "swing"
+            )
+            $('.slide-3').delay(2000).show()
+            .animate({
+                "opacity": 1,
+                "width": "200px",
+                "height": "189px",
+                "left": leftPosition+"px"}, 1500, "swing",
+                function() {
+                    $("#slide-3-text").animate({"opacity": 1, "fontSize": "20px"})
+                    $('.slide-4').css({
+                        "opacity": "0",
+                        "display": "block",
+                    }).fadeIn().animate({
+                        "opacity": 1,
+                        'fontSize': '20px',
+                        "top": "195px"}, 1000
+                    );
+            })
+}

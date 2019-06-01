@@ -11,6 +11,8 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
     <!-- Font awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <!-- Slider CSS -->
+    <link rel="stylesheet" href="{% static 'css/lightslider.min.css' %}">
     <!-- Custom styles for this template -->
     <link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
 </head>
@@ -24,17 +26,17 @@
                     <i class="fas fa-bars fa-2x"></i>
                     <!--<img src="{% static 'images/menu.png' %}" width="50" /> -->
                     <ul class="dropdown-menu">
-                        <li id="product-submenu"><a href="/product/">Product</a>
+                        <li id="product-submenu"><a href="/product/">PRODUCT</a>
                             {% if cat_url %}
                                 <ul class="dropdown-submenu">
                                 {% for cat in cat_url %}
-                                    <li><a href="/product/category/{{ cat.1 }}/">{{ cat.0 }}</a></li>
+                                    <li><a href="/product/category/{{ cat.1 }}/">{{ cat.0|safe|upper  }}</a></li>
                                 {% endfor %}
                                 </ul>
                             {% endif %}
                         </li>
-                        <li><a href="/who-we-are/">ESD Team</a></li>
-                        <li><a href="/esd-philosophy/">ESD's Philosophy</a></li>
+                        <li><a href="/who-we-are/">ESD TEAM</a></li>
+                        <li><a href="/esd-philosophy/">ESD's PHILOSOPHY</a></li>
                     </ul>
                 </a>
             </div>
@@ -76,16 +78,16 @@
             </div>
             <div id="footer-menu">
                 <div class="footer-menu-left">
-                    <a>Contact Us</a><br />
-                    <a href="mailto:info.esdbc@gmail.com"><i class="fas fa-at"></i> E-mail</a>, 
-                    <a href="tel:+8801723620138"><i class="fas fa-phone-square"></i> Phone</a>, 
-                    <a href="tel:+1-647-608-0367"><i class="fa fa-mobile"></i> Cell</a><br />
-                    <a href="/esd-career/">Career</a>
+                    <a>CONTACT US</a><br />
+                    <a href="mailto:info.esdbc@gmail.com"><i class="fas fa-at"></i> E-MAIL</a>, 
+                    <a href="tel:+8801723620138"><i class="fas fa-phone-square"></i> PHONE</a>, 
+                    <a href="tel:+1-647-608-0367"><i class="fa fa-mobile"></i> CELL</a><br />
+                    <a href="/esd-career/">CAREER</a>
                 </div>
                 <div class="footer-menu-right">
-                    <a href="/privacy-policy/">Privacy Statements</a> <br />
-                    <a href="/terms-and-conditions-of-sale/">Terms & Conditions</a> <br />
-                    <a href="/copyrights-trademarks-patents/">Copyright, Trademarks, & Patents</a> <br />
+                    <a href="/privacy-policy/">PRIVACY STATEMENTS</a> <br />
+                    <a href="/terms-and-conditions-of-sale/">TERMS & CONDITIONS</a> <br />
+                    <a href="/copyrights-trademarks-patents/">COPYRIGHT, TRADEMARKS & PATENTS</a> <br />
                 </div>
             </div>
             <div id="footer-address">
@@ -95,8 +97,9 @@
         </div>
 
     </div>
-<script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
-<script src="{% static 'js/jquery.diyslider.min.js' %}"></script>
-<script src="{% static 'js/common.js' %}"></script>
+    <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+    <script src="{% static 'js/jquery-ui.min.js' %}"></script>
+    <script src="{% static 'js/lightslider.min.js' %}"></script>
+    <script src="{% static 'js/common.js' %}"></script>
 </body>
 </html>

@@ -343,3 +343,39 @@ div#footer a {
 .fass {
   color: #000;
 }
+
+/*
+* Media Query
+*/
+
+@media screen and (max-width: 768px) {
+  div#product ul li div.image {
+    width: 100%;
+  }
+  div#product ul li div.text {
+    width: 100%;
+    margin: 0;
+  }
+  div#footer-menu div.footer-menu-left, div#footer-menu div.footer-menu-right {
+    width: 98%;
+    text-align: left;
+  }
+  div#footer-menu div.footer-menu-right {
+    border-top: 1px solid #ddd;
+    margin-top: 15px;
+    padding-top: 15px;
+  }
+
+  div#content div.row img.img-right {
+    float: left;
+  }
+  div#content div.row img.team {
+    width: 80%;
+    margin: 10%;
+    border-radius: 50%;
+  }
+  div#content div.story div.row img.product-image {
+    width: 80%;
+    margin: 10%;
+  }
+}

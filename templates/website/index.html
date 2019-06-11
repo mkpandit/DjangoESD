@@ -1,20 +1,13 @@
 {% extends "website/base.html" %}
 
-{% block slider %}
-<!-- Home page slider  -->
-<div id="slider">
-    <div class="clide slide-0"><p>&nbsp;</p></div>
-    <div class="clide slide-1"><p>&nbsp;</p></div>
-    <div class="clide slide-2"><p>&nbsp;</p></div>
-    <div class="clide slide-3"><p>&nbsp;</p><span id="slide-3-text">ESD</span></div>
-    <div class="slide-4">Making Science Accessible</div>
-</div>
-{% endblock %}
+{% block title %}
+    ESD Home
+{% endblock%}
 
 {% block featued_product %}
 
 {% if content %}
-    <h1>Featured product</h1>
+    <h1>FEATURED PRODUCTS</h1>
     <div id="product">
         <ul id="content-slider" class="content-slider">
             {% for product in content %}

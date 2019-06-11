@@ -15,6 +15,9 @@
     <div class="story">
         <div class="row one-row">
             <img class="product-image" src="/media/{{ product.image }}" title="{{ product.name|safe }}" alt="{{ product.name|safe }}" />
+            <h3>FEATURES</h3>
+            {{ product.features|safe }}
+            <h3>DETAILS</h3>
             {{ product.description|safe }}
         </div>
     </div>

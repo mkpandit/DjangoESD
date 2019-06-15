@@ -16,6 +16,11 @@ $(document).ready(function() {
         firstSlide(leftPosition)
         console.log(leftPosition)
 
+        // Reset slider on size change
+        $('#slider').sizeChanged(function() {
+            location.reload()
+        })
+
         // Featured product slider
         $("#content-slider").lightSlider({
             item: 1,
@@ -29,8 +34,6 @@ $(document).ready(function() {
         })
     }
 });
-
-$(window).on('resize',function(){ location.reload();});
 
 // Slide 1
 function firstSlide(leftPosition) {
@@ -213,3 +216,23 @@ $.fn.animateRotate = function(angle, duration, easing, complete) {
         $({deg: 0}).animate({deg: angle}, args);
     });
 };
+
+// Detect div resize
+(function ($) {
+    $.fn.sizeChanged = function (handleFunction) {
+        var element = this;
+        var lastWidth = element.width();
+        var lastHeight = element.height();
+        setInterval(function () {
+            if (lastWidth === element.width()&&lastHeight === element.height())
+                return;
+            if (typeof (handleFunction) == 'function') {
+                handleFunction({ width: lastWidth, height: lastHeight },
+                { width: element.width(), height: element.height() });
+                lastWidth = element.width();
+                lastHeight = element.height();
+            }
+        }, 100);
+        return element;
+    };
+} (jQuery));

@@ -1,6 +1,7 @@
 $(document).ready(function() {
     if (window.location.pathname === '/' || window.location.pathname === '/index.html') {
         // Static slider
+
         var sliderContainerWidth = parseInt($('#slider').width())
         var leftPosition = parseInt( ( ( sliderContainerWidth  - 200 ) / 2 ) )
 
@@ -13,6 +14,7 @@ $(document).ready(function() {
         $(".slide-2").hide()
         $(".slide-3").hide()
         firstSlide(leftPosition)
+        console.log(leftPosition)
 
         // Featured product slider
         $("#content-slider").lightSlider({
@@ -27,6 +29,8 @@ $(document).ready(function() {
         })
     }
 });
+
+$(window).on('resize',function(){ location.reload();});
 
 // Slide 1
 function firstSlide(leftPosition) {

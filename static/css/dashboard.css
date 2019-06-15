@@ -30,7 +30,7 @@ body {
 }
 
 table {
-  width: 80%;
+  width: 96%;
   border-collapse: collapse;
 }
 
@@ -68,16 +68,16 @@ div#header div.icon {
 div#header div.menu {
   width: 5%;
   text-align: left;
-  padding-top: 25px;
+  padding-top: 32px;
 }
 
 div#header div.icon {
-  width: 10%;
+  width: 5%;
   display: none;
 }
 
 div#header div.menu > a {
-  padding-left: 10px;
+  padding-left: 12px;
 }
 
 ul.dropdown-menu {
@@ -116,7 +116,7 @@ ul.dropdown-submenu{
 }
 
 div#header div.logo {
-  width: 84%;
+  width: 89%;
   float: left;
   text-align: center;
   height: 95px;

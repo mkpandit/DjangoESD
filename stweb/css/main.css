@@ -185,30 +185,59 @@ textarea {
 /*--------------------Custom CSS------------------------------------------*/
 #header {
   border-bottom: 1px solid #333;
-  width: 100%;
+  width: 98%;
+  padding-left: 1%;
+  padding-right: 1%;
   clear: both;
   float: left;
 }
 
 #header .menu {
-  width: 10%;
+  width: 0%;
   float: left;
 }
 
 #header .logo {
-  width: 90%;
+  width: 100%;
   float: left;
+  text-align: center;
 }
 
 #body {
-  width: 100%;
+  width: 98%;
+  padding-left: 1%;
+  padding-right: 1%;
   clear: both;
+}
+
+#body .product {
+  width: 100%;
+  float: left;
+}
+
+#body .product .product-1,
+#body .product .product-2,
+#body .product .product-3,
+#body .product .product-4,
+#body .product .product-5  {
+  float: left;
+  width: 50%;
+}
+
+#body .product img {
+  width: 100%;
 }
 
 #footer {
   border-top: 1px solid #333;
-  width: 100%;
+  width: 98%;
+  padding-left: 1%;
+  padding-right: 1%;
   clear: both;
+}
+
+#footer .address {
+  text-align: center;
 }
 
 /*--------------------Custom CSS Ends-------------------------------------*/
